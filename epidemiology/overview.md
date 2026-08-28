@@ -1,4 +1,4 @@
-# Execution flow of BioDynaMo epidemiology use case
+# Overview of BioDynaMo epidemiology use case
 
 ## 1. Purpose
 
