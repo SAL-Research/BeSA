@@ -1,3 +1,7 @@
-# SimPoint BBV/PC profiling output (large binary artifacts)
+# SimPoint BBV/PC profiling output (large binary artifacts and log files)
 *_bbv.out
 *_pc.out
+*.orig
+*.log
+*.bb
+*.pc
