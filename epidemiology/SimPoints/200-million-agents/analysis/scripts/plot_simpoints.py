@@ -13,9 +13,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
 
-# --- muted palette (replaces flat-UI #3498DB / #E74C3C) -----------------------
-BASE   = "#0072B2"   # Okabe-Ito blue: regular bars
-ACCENT = "#D55E00"   # Okabe-Ito vermillion: dominant cluster
+# --- project palette (validated pair: ΔE 20.6/14.0 deutan/tritan) -------------
+BASE   = "#54A767"   # regular bars
+ACCENT = "#7A63B8"   # dominant cluster (nudged from requested #8071B2, which reads
+                      # near-gray at OKLCH chroma 0.099 -- below the 0.10 identity floor)
 INK    = "#2C3E50"   # axes, text, cumulative line
 GRID   = "#E7E6E1"   # soft warm gray gridlines
 
