@@ -35,6 +35,8 @@ ROOT_LIB = os.path.expanduser("~/biodynamo-v1.05.153/third_party/root/lib")
 ROOTSYS = os.path.expanduser("~/biodynamo-v1.05.153/third_party/root")
 LD_PATH = f"{BDM_LIB}:{ROOT_LIB}"
 HOME = os.path.expanduser("~")
+BDMSYS = os.path.expanduser("~/biodynamo-v1.05.153")
+SHIM = os.path.expanduser("~/tumor_gem5/gem5_system_shim.so")
 
 board = SimpleBoard(
     clk_freq="3GHz",
@@ -49,12 +51,14 @@ board.set_se_binary_workload(
     binary=BINARY,
     arguments=["--config", CONFIG],
     env_list=[
+        f"LD_PRELOAD={SHIM}",
         f"LD_LIBRARY_PATH={LD_PATH}",
         f"HOME={HOME}",
         f"ROOTSYS={ROOTSYS}",
         "ROOT_HIST=0",
         "OMP_NUM_THREADS=1",
         "OMP_PROC_BIND=false",
+        f"BDMSYS={BDMSYS}",
     ],
 )
 
