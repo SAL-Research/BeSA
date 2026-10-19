@@ -5,3 +5,10 @@
 *.log
 *.bb
 *.pc
+
+# Pipeline config (contains machine-specific paths)
+pipeline/pipeline.env
+
+# gem5 output
+m5out/
+*.pid

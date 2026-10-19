@@ -2,12 +2,6 @@
 """
 plot_pareto_comparison.py -- two-panel SimPoint Pareto comparison across workloads.
 
-Same visual language as epidemiology/SimPoints/200-million-agents/analysis/scripts/plot_simpoints.py,
-but x-axis is cluster *rank* (not cluster ID or instruction count), since the two
-workloads have unrelated cluster-ID spaces and ~140x different total instruction
-counts -- rank is the only axis both runs share.
-
-Figure: pareto_comparison (PNG @300dpi + vector PDF).
 """
 
 import argparse, os
@@ -17,9 +11,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
 
-BASE   = "#54A767"   # regular bars (validated pair w/ ACCENT: ΔE 20.6/14.0 deutan/tritan)
-ACCENT = "#7A63B8"   # dominant cluster (nudged from requested #8071B2, which reads
-                      # near-gray at OKLCH chroma 0.099 -- below the 0.10 identity floor)
+BASE   = "#54A767"   # regular bars 
+ACCENT = "#7A63B8"   # dominant cluster 
 INK    = "#2C3E50"   # axes, text, cumulative line
 GRID   = "#E7E6E1"   # soft warm gray gridlines
 
