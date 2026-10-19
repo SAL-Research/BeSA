@@ -60,7 +60,7 @@ See [pipeline/README.md](pipeline/README.md) for detailed usage.
 
 ```bash
 # 1. Clone
-git clone <repo-url> besa && cd besa
+git clone https://github.com/SAL-Research/BeSA.git && cd BeSA
 
 # 2. Set up (once)
 bash pipeline/scripts/setup_env.sh
