@@ -1,6 +1,5 @@
 """
 Shared configuration for all gem5 SE-mode scripts.
-
 Reads paths and parameters from environment variables set by the pipeline
 shell scripts, with sensible defaults for standalone use.
 """

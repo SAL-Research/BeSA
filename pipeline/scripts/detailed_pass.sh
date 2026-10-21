@@ -1,12 +1,8 @@
-#!/usr/bin/env bash
 # Stage 7: Run all detailed SimPoint simulations (O3CPU + caches).
-#
 # Each restores from a checkpoint and simulates one interval (100M instructions).
-# Supports sequential or parallel mode.
-#
 # Usage:
-#   bash pipeline/scripts/detailed_pass.sh              # sequential
-#   bash pipeline/scripts/detailed_pass.sh parallel      # all in parallel
+#   bash pipeline/scripts/detailed_pass.sh              
+#   bash pipeline/scripts/detailed_pass.sh parallel      
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -24,7 +20,6 @@ cd "${WORK_DIR}"
 CPT_BASE="${WORK_DIR}/m5out"
 RESTORE_SCRIPT="${SCRIPT_DIR}/../configs/restore_simpoint.py"
 
-# Discover checkpoint directories
 CHECKPOINTS=()
 for cpt_dir in "${CPT_BASE}"/cpt.simpoint_*; do
     if [[ -d "$cpt_dir" ]]; then

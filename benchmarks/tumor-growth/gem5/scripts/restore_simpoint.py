@@ -1,18 +1,15 @@
 """
 Restore a single SimPoint checkpoint and run 100M instructions with O3CPU
 and a realistic cache hierarchy for detailed microarchitectural simulation.
-
 Usage:
     source ~/miniforge3/etc/profile.d/conda.sh && conda activate gem5
     cd ~/tumor_gem5
 
-    # Restore one checkpoint (e.g., SimPoint 0, index 196):
     ~/gem5/build/X86/gem5.opt \
         -d m5out/detail_sp00_idx196 \
         scripts/restore_simpoint.py \
         --checkpoint-dir m5out/cpt.simpoint_00_idx196
 
-    # Or run all 10 in parallel (see run_all_detailed.sh)
 """
 import argparse
 import os
@@ -36,7 +33,7 @@ parser.add_argument("--checkpoint-dir", required=True,
                     help="Path to the checkpoint directory to restore from")
 args = parser.parse_args()
 
-INTERVAL_SIZE = 100_000_000  # run exactly one SimPoint interval
+INTERVAL_SIZE = 100_000_000  
 
 BINARY = BinaryResource(
     local_path=os.path.expanduser(

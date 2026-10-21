@@ -11,8 +11,6 @@ count never changes), `tumor_concept` is a **dynamic-population** model: only th
 *initial* population is set; from there, a division rule drives population as an
 emergent function of runtime. 
 
-**Status: BBV generation and SimPoint clustering have both completed successfully, at 800 iterations gem5 Full-System Simulation is the remaining stage, not yet executed**
-
 ---
 
 ## The pipeline, in order

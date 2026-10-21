@@ -1,9 +1,6 @@
-#!/usr/bin/env python3
 """
 plot_simpoints.py -- muted, publication-oriented restyle.
 
-Figures: cluster_weights_bar, cluster_pareto, simpoint_timeline
-(PNG @300dpi + vector PDF).
 """
 
 import argparse, os
@@ -13,15 +10,13 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
 
-# --- project palette (validated pair: ΔE 20.6/14.0 deutan/tritan) -------------
 BASE   = "#54A767"   # regular bars
-ACCENT = "#7A63B8"   # dominant cluster (nudged from requested #8071B2, which reads
-                      # near-gray at OKLCH chroma 0.099 -- below the 0.10 identity floor)
+ACCENT = "#7A63B8"   # dominant cluster 
 INK    = "#2C3E50"   # axes, text, cumulative line
 GRID   = "#E7E6E1"   # soft warm gray gridlines
 
 plt.rcParams.update({
-    "font.family": "serif",              # blends into a LaTeX document
+    "font.family": "serif",              
     "font.size": 9,
     "axes.titlesize": 10,
     "axes.labelsize": 9,

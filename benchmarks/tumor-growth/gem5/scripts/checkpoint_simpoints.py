@@ -1,26 +1,6 @@
 """
 SimPoint checkpoint pass for BioDynaMo tumor_concept (800 iterations).
 
-Runs AtomicSimpleCPU (fast, no caches) and takes a checkpoint at each of
-the 10 SimPoint intervals. The checkpoints are saved under m5out/cpt.*
-and will be restored later with O3CPU for detailed simulation.
-
-SimPoint data (original indices, i.e. trimmed_index + 160):
-  Index  Weight      Instruction offset (index * 100M)
-  196    0.00242     19,600,000,000
-  250    0.00238     25,000,000,000
-  457    0.01419     45,700,000,000
-  479    0.00657     47,900,000,000
-  1393   0.06718     139,300,000,000
-  2588   0.00343     258,800,000,000
-  5275   0.21891     527,500,000,000
-  11764  0.00206     1,176,400,000,000
-  12158  0.42528     1,215,800,000,000
-  22871  0.25760     2,287,100,000,000
-
-Strategy: single ascending-order run. Schedule max_insts exit events at
-each SimPoint offset, take checkpoint, continue to next.
-
 Usage:
     source ~/miniforge3/etc/profile.d/conda.sh && conda activate gem5
     cd ~/tumor_gem5
@@ -42,7 +22,7 @@ from gem5.utils.requires import requires
 
 requires(isa_required=ISA.X86)
 
-INTERVAL_SIZE = 100_000_000  # 100M instructions per interval
+INTERVAL_SIZE = 100_000_000 
 
 SIMPOINTS = [
     (196,   0.00241799),

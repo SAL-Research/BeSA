@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
 # Master orchestrator: run all pipeline stages end-to-end.
-#
 # Stages:
 #   0  setup_env      — install BioDynaMo, gem5, conda env, shim
 #   1  build          — build the benchmark binary (user-provided)
@@ -11,13 +9,12 @@
 #   6  checkpoint     — AtomicSimpleCPU fast-forward to each SimPoint
 #   7  detailed       — O3CPU + caches detailed simulation per SimPoint
 #   8  aggregate      — weighted metric aggregation + DAMOV/roofline
-#
 # Usage:
-#   bash pipeline/scripts/run_pipeline.sh                # all stages
-#   bash pipeline/scripts/run_pipeline.sh 2-4            # stages 2 through 4
-#   bash pipeline/scripts/run_pipeline.sh 6              # single stage
-#   bash pipeline/scripts/run_pipeline.sh 6-8            # stages 6 through 8
-#   bash pipeline/scripts/run_pipeline.sh --from 5       # stages 5 onward
+#   bash pipeline/scripts/run_pipeline.sh                
+#   bash pipeline/scripts/run_pipeline.sh 2-4            
+#   bash pipeline/scripts/run_pipeline.sh 6              
+#   bash pipeline/scripts/run_pipeline.sh 6-8            
+#   bash pipeline/scripts/run_pipeline.sh --from 5      
 #
 # The pipeline.env file must exist before running.
 set -euo pipefail
@@ -78,7 +75,6 @@ run_stage() {
     echo "  Stage ${num} (${name}) completed in ${elapsed}s"
 }
 
-# Parse stage range
 START=0
 END=8
 

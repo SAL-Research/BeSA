@@ -29,7 +29,7 @@ echo "  Work dir: ${WORK_DIR}" >&2
 echo "  Log:      ${LOG}" >&2
 
 if [[ "${1:-}" == "foreground" ]]; then
-    "${GEM5_BIN}" configs/checkpoint_simpoints.py 2>&1 | tee "${LOG}"
+    "${GEM5_BIN}" "${SCRIPT_DIR}/../configs/checkpoint_simpoints.py" 2>&1 | tee "${LOG}"
 else
     echo "  Running in background with nohup..." >&2
     nohup "${GEM5_BIN}" \

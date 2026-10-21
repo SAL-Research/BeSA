@@ -1,13 +1,7 @@
 """
-Aggregate weighted metrics from SimPoint detailed simulation runs.
-
 Computes metrics for:
-  - Roofline analysis (Arithmetic Intensity vs Performance)
-  - DAMOV-methodology characterization (LFMR, LLC MPKI, AI)
-
-Auto-discovers SimPoints from detail_sp* directories, or reads from
-$WORK_DIR/sampling/simpoints/ files.
-
+  - Roofline analysis 
+  - DAMOV-methodology characterization
 Usage:
     python3 analysis/aggregate_metrics.py [m5out_dir]
     python3 analysis/aggregate_metrics.py [m5out_dir] --discover
@@ -118,14 +112,12 @@ def discover_simpoints(base_dir):
                     orig_indices[int(parts[1])] = int(parts[0])
         break
 
-    # If files found, build from them
     if orig_indices and weights:
         sps = []
         for i, cluster in enumerate(sorted(orig_indices.keys())):
             sps.append((i, orig_indices[cluster], weights.get(cluster, 0.0)))
         return sorted(sps, key=lambda x: x[0])
 
-    # Fallback: discover from directory names
     pattern = os.path.join(base_dir, "detail_sp*_idx*")
     dirs = sorted(glob.glob(pattern))
     sps = []

@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Run all 10 SimPoint detailed simulations (O3CPU + caches).
 # Each restores from a checkpoint and simulates 100M instructions.
-#
 # Usage:
 #   source ~/miniforge3/etc/profile.d/conda.sh && conda activate gem5
 #   cd ~/tumor_gem5

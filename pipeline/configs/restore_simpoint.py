@@ -1,9 +1,7 @@
 """
 Stage 7: Restore a single SimPoint checkpoint for detailed simulation.
-
 Runs O3CPU with realistic cache hierarchy (L1d + L1i + L2) for exactly
-one SimPoint interval (INTERVAL_SIZE instructions).
-
+one SimPoint interval.
 Usage:
     ~/gem5/build/X86/gem5.opt -d m5out/detail_sp00_idx196 \
         configs/restore_simpoint.py --checkpoint-dir m5out/cpt.simpoint_00_idx196

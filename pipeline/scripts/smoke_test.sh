@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
 # Stage 5: Run gem5 smoke test — verify the binary runs under gem5 SE mode.
-#
 # Usage:
 #   bash pipeline/scripts/smoke_test.sh
 set -euo pipefail

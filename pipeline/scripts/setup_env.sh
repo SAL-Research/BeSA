@@ -1,10 +1,6 @@
-#!/usr/bin/env bash
 # Stage 0: Set up a fresh VM with BioDynaMo, gem5-BeSA, and all dependencies.
-#
 # Usage:
 #   ssh $VM_NAME 'bash pipeline/scripts/setup_env.sh'
-#
-# Requires: Ubuntu 22.04, sudo access.
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -55,7 +51,6 @@ if [[ ! -d "${GEM5_DIR}" ]]; then
     git clone https://github.com/SAL-Research/gem5-BeSA.git "${GEM5_DIR}"
 fi
 
-# build_gem5.sh builds gem5.opt and compiles gem5_system_shim.so
 if [[ ! -f "${GEM5_BIN}" ]]; then
     bash "${GEM5_DIR}/util/abm/build_gem5.sh" "${GEM5_ISA}" -j"$(nproc)"
 fi

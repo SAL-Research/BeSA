@@ -1,9 +1,5 @@
-#!/usr/bin/env bash
 # Stage 4: Run SimPoint clustering on the trimmed BBV file.
-#
 # Outputs .simpts and .weights files, plus a mapping to original indices
-# (trimmed index + TRIM_INTERVALS offset).
-#
 # Usage:
 #   bash pipeline/scripts/run_simpoint.sh
 set -euo pipefail

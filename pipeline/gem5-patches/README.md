@@ -2,8 +2,7 @@
 
 All patches and the LD_PRELOAD shim are maintained in the
 [gem5-BeSA](https://github.com/SAL-Research/gem5-BeSA) fork. The patches
-are applied directly in the gem5-BeSA source tree (not shipped as `.patch`
-files), and the shim lives at `gem5-patches/` in that repo with a Makefile.
+are applied directly in the gem5-BeSA source tree, and the shim lives at `gem5-patches/` in that repo with a Makefile.
 
 `setup_env.sh` clones gem5-BeSA and runs `util/abm/build_gem5.sh`, which
 builds both `gem5.opt` and `gem5_system_shim.so` automatically.

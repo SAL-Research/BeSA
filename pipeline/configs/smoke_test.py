@@ -2,7 +2,6 @@
 Stage 5: gem5 SE-mode smoke test.
 Runs AtomicSimpleCPU with no caches to verify the binary boots and enters
 the simulation loop under gem5.
-
 Usage:
     export SMOKE_TEST_INSTS=1000000000
     ~/gem5/build/X86/gem5.opt configs/smoke_test.py

@@ -1,10 +1,4 @@
-#!/usr/bin/env bash
 # Stage 3: Trim JIT startup intervals from the BBV file.
-#
-# ROOT/cling JIT compilation produces a fixed number of startup intervals
-# that are identical across all runs regardless of workload parameters.
-# These must be removed before SimPoint clustering.
-#
 # Usage:
 #   bash pipeline/scripts/trim_bbv.sh
 set -euo pipefail
@@ -31,8 +25,6 @@ TOTAL_BEFORE=$(grep -c '^T' "${BB_IN}")
 echo "Trimming first ${TRIM_INTERVALS} intervals from ${BB_IN}" >&2
 echo "  Intervals before trim: ${TOTAL_BEFORE}" >&2
 
-# Each interval starts with a line "T" — skip the first TRIM_INTERVALS blocks.
-# A "T" line marks the start of each interval block.
 awk -v skip="${TRIM_INTERVALS}" '
     /^T/ { count++ }
     count > skip { print }

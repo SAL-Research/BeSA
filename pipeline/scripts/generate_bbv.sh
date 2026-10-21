@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
 # Stage 2: Generate Basic Block Vectors using Valgrind exp-bbv.
-#
 # Usage:
 #   bash pipeline/scripts/generate_bbv.sh
 set -euo pipefail

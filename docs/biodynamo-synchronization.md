@@ -2,11 +2,7 @@
 
 ## 1. Purpose
 
-This document summarizes findings from source-code inspection of
-BioDynaMo, focusing on: - Scheduler architecture - Parallel execution
-model - OpenMP synchronization - Barrier placement - Implications for
-BarrierPoint and SimPoint - Experimental considerations for performance
-characterization
+This document summarizes findings focusing on: - Scheduler architecture - Parallel execution model - OpenMP synchronization - Barrier placement - Implications for BarrierPoint and SimPoint - Experimental considerations for performance characterization
 
 ------------------------------------------------------------------------
 
@@ -182,7 +178,7 @@ executed every iteration.
 
 ------------------------------------------------------------------------
 
-## 10. Key Research Insights
+## 10. Key Insights
 
 1.  BioDynaMo's default scheduler bundles all agent operations into one
     OpenMP region.

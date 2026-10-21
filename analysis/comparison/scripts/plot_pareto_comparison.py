@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 plot_pareto_comparison.py -- two-panel SimPoint Pareto comparison across workloads.
 

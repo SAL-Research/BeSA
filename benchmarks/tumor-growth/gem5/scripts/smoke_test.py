@@ -1,8 +1,5 @@
 """
 gem5 SE-mode smoke test for BioDynaMo tumor_concept (800 iterations).
-Runs AtomicSimpleCPU with no caches for 500M instructions to verify
-the binary boots and enters the simulation loop under gem5.
-
 Usage (on the benchmark server):
     source ~/miniforge3/etc/profile.d/conda.sh && conda activate gem5
     cd ~/tumor_gem5

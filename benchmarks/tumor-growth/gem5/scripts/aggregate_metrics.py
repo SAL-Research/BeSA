@@ -2,17 +2,15 @@
 Aggregate weighted metrics from SimPoint detailed simulation runs.
 
 Computes metrics for:
-  - Roofline analysis (Arithmetic Intensity vs Performance)
-  - DAMOV-methodology characterization (LFMR, LLC MPKI, AI)
+  - Roofline analysis 
+  - DAMOV-methodology characterization 
 
-Reads stats.txt from each detail_spNN_idxXXX output directory, extracts
-per-core and cache/memory metrics, and computes weighted averages.
 
 Usage:
     cd ~/tumor_gem5
     python3 scripts/aggregate_metrics.py [m5out]
-    python3 scripts/aggregate_metrics.py [m5out] --discover   # dump matching stat names
-    python3 scripts/aggregate_metrics.py [m5out] --csv        # CSV output
+    python3 scripts/aggregate_metrics.py [m5out] --discover  
+    python3 scripts/aggregate_metrics.py [m5out] --csv        
 """
 import os
 import re
